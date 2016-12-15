@@ -375,6 +375,8 @@ private:
      * Updates the background by creating a new QPalette object. */
     void updateBackground();
 
+    void drawBackground(QPainter * painter, const QRectF & rect);
+
     /**
      * Add all the items from the board layout to the scene object. */
     void addItemsFromBoardLayout();

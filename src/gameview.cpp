@@ -18,6 +18,7 @@
 // Qt
 #include <QMouseEvent>
 #include <QResizeEvent>
+#include <QPainter>
 
 // KDE
 #include <KLocalizedString>
@@ -933,6 +934,11 @@ void GameView::updateBackground()
 
     QBrush brush(m_background->getBackground());
     setBackgroundBrush(brush);
+}
+
+void GameView::drawBackground(QPainter *painter, const QRectF &rect)
+{
+    painter->drawImage(rect, backgroundBrush().textureImage(), rect);
 }
 
 void GameView::setGameData(GameData * gameData)
